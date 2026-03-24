@@ -1,0 +1,1517 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: transparent;
+  color: #2e2e2e;
+  overflow: hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background: radial-gradient(circle at 30% 20%, #f7f3ea, #f0eadf);
+
+  z-index:-2;
+}
+
+/* ===== PANTALLAS ===== */
+.screen {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  padding:0;
+}
+.screen.show {
+  display: flex;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scroll invitación */
+.scrollable {
+  overflow-y: auto;
+  flex-direction: column;
+
+  padding-top: 0;
+  padding-bottom: 0;
+
+  align-items: center;
+}
+
+/* ===== TARJETAS ===== */
+.card {
+  background: #ffffff;
+  padding: 50px 35px;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  color: #c6a75e;
+  letter-spacing: 1px;
+}
+
+p {
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+/* ===== INPUT ===== */
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  border: 1px solid #e6d3a3;
+  background: #fdfcf9;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid #c6a75e;
+}
+
+/* ===== BOTONES ===== */
+button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #c6a75e;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b8954f;
+}
+
+/* ===== BLOQUES INVITACIÓN ===== */
+.bloque {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 80px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.bloque.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bloque h1 {
+  font-size: 42px;
+}
+
+.bloque h3 {
+  font-family: 'Playfair Display', serif;
+  color: #c6a75e;
+  margin-bottom: 15px;
+}
+
+.dorado {
+  border-top: 1px solid #e6d3a3;
+  border-bottom: 1px solid #e6d3a3;
+  padding: 25px 0;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 14px;
+}
+/* ===== FONDO ELEGANTE ===== */
+
+#acceso,
+#bienvenida {
+  background-image: url("assets/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* capa suave blanca encima */
+#acceso::before,
+#bienvenida::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: none
+}
+
+#acceso .card,
+#bienvenida .card {
+  position: relative;
+  z-index: 2;
+}
+/* ===== FONDO PANTALLAS 1 Y 2 ===== */
+
+#acceso,
+#bienvenida {
+  background-image: url("assets/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===== TARJETA TRANSPARENTE ===== */
+
+#acceso .card,
+#bienvenida .card {
+  background: rgba(0, 0, 0, 0.45); /* negro transparente */
+  backdrop-filter: blur(6px);
+  color: white;
+}
+
+/* mantener dorado elegante */
+
+#acceso h1,
+#bienvenida h2 {
+  color: #e6c97a;
+}
+
+#acceso p,
+#bienvenida p {
+  color: #f5f5f5;
+}
+
+/* input más elegante */
+
+#acceso input {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+}
+
+#acceso input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* botón dorado */
+
+#acceso button,
+#bienvenida button {
+  background: #c6a75e;
+}
+
+#acceso button:hover,
+#bienvenida button:hover {
+  background: #b8954f;
+}
+/* ===== PANTALLA 3 ESTILO ELEGANTE ===== */
+
+#invitacion {
+  background: #ffffff;
+}
+
+/* bloques más elegantes */
+
+.bloque {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 80px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.bloque.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scrollable {
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding:0;
+}
+
+/* titulo principal */
+
+.bloque h1 {
+  font-size: 48px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: #c6a75e;
+}
+
+/* subtitulo */
+
+.bloque p {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* bloque fecha */
+
+.dorado {
+  border-top: 1px solid #e6d3a3;
+  border-bottom: 1px solid #e6d3a3;
+  padding: 35px 0;
+}
+
+.dorado p {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* sección celebración */
+
+.bloque h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* botón confirmar más elegante */
+
+#btnConfirmar {
+  margin-top: 15px;
+  padding: 14px 32px;
+  border-radius: 40px;
+  background: #c6a75e;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+#btnConfirmar:hover {
+  background: #b8954f;
+}
+/* ===== NOMBRE FESTEJADA ===== */
+
+.nombre h2{
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  letter-spacing: 3px;
+  color: #c6a75e;
+}
+
+/* separación elegante */
+
+.bloque{
+  margin-bottom:80px;
+}
+
+/* línea dorada elegante */
+
+.dorado{
+  border-top:1px solid #e6d3a3;
+  border-bottom:1px solid #e6d3a3;
+  padding:35px 0;
+}
+
+.dorado p{
+  font-size:18px;
+  letter-spacing:2px;
+}
+
+/* animación elegante */
+
+.bloque{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.bloque.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+/* contador */
+
+#contador{
+  font-size:28px;
+  font-weight:500;
+  letter-spacing:2px;
+  color:#c6a75e;
+}
+
+/* botones elegantes */
+
+button{
+  margin-top:10px;
+}
+
+/* nombre grande */
+
+.nombre h2{
+  font-size:44px;
+  letter-spacing:3px;
+}
+/* ===== CONTADOR ===== */
+
+.titulo-contador{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #c6a75e;
+  margin-bottom: 25px;
+}
+
+.tiempo{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.tiempo-item{
+  text-align:center;
+}
+
+.tiempo-item span{
+  display:block;
+  font-family:'Cormorant Garamond', serif;
+  font-size:32px;
+  color:#2e2e2e;
+}
+
+.tiempo-item small{
+  font-size:11px;
+  letter-spacing:2px;
+  color:#777;
+}
+.contador p{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  color: #c6a75e;
+  letter-spacing: 2px;
+}
+/* TITULO */
+/* ===== BLOQUE TITULO ELEGANTE ===== */
+
+/* ===== BLOQUE TITULO PANTALLA COMPLETA ===== */
+
+.titulo{
+
+position:relative;
+
+width:100vw;
+margin-left:calc(-50vw + 50%);
+
+padding-top:120px;
+padding-bottom:0;
+
+line-height:1;
+
+background:
+linear-gradient(
+rgba(249,247,243,0.75),
+rgba(249,247,243,0.75)
+),
+url("assets/rosas-doradas.png");
+
+background-size:260px;
+background-repeat:repeat;
+background-position:center;
+
+}
+.titulo::before{
+
+content:"";
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+background: radial-gradient(
+circle,
+rgba(198,167,94,0.15),
+transparent 60%
+);
+
+}
+.titulo h1{
+
+font-family:'Cormorant Garamond', serif;
+
+font-size:64px;
+
+letter-spacing:6px;
+
+color:#c6a75e;
+
+margin-bottom:10px;
+
+}
+
+.titulo p{
+
+font-family:'Cormorant Garamond', serif;
+
+font-size:34px;
+letter-spacing:3px;
+
+color:#2e2e2e;
+
+margin-top:10px;
+
+font-weight:500;
+
+}
+
+.flecha{
+font-size:28px;
+margin-top:20px;
+opacity:0.6;
+}
+
+/* FRASE */
+
+.frase{
+
+background:#c6a75e;
+color:white;
+text-align:center;
+
+padding:25px 20px;
+
+width:100vw;
+margin-left:calc(-50vw + 50%);
+
+margin-top:0;
+margin-bottom:50px;
+
+}
+
+.frase p{
+  max-width:600px;
+  margin:auto;
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px;
+  line-height:1.6;
+  letter-spacing:1px;
+  font-weight:600;
+  
+  
+}
+
+
+/* FECHA */
+
+.fecha h2{
+font-family:'Cormorant Garamond', serif;
+font-size:34px;
+color:#141414f1;
+font-weight:600;
+margin-bottom:5px;
+
+}
+
+.texto-arriba{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:14px;
+
+  letter-spacing:1px;
+
+  color:#777;
+
+  margin-bottom:10px;
+
+  font-weight:600;
+
+}
+
+/* CONTADOR */
+
+.contador{
+margin-top:5px;
+}
+
+.tiempos{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+font-family:'Cormorant Garamond', serif;
+}
+
+.tiempos span{
+font-size:34px;
+color:#2e2e2e;
+}
+
+.tiempos p{
+font-size:12px;
+margin-top:2px;
+}
+
+.separador{
+font-size:26px;
+margin:0 4px;
+}
+/* ===== DESTELLOS DORADOS ===== */
+
+.sparkles{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+  radial-gradient(circle, rgba(198,167,94,0.8) 2px, transparent 2px),
+  radial-gradient(circle, rgba(198,167,94,0.6) 1px, transparent 1px),
+  radial-gradient(circle, rgba(198,167,94,0.7) 2px, transparent 2px);
+
+  background-size:
+  200px 200px,
+  140px 140px,
+  260px 260px;
+
+  animation: sparkleTwinkle 6s ease-in-out infinite;
+}
+@keyframes sparkleTwinkle{
+
+0%{
+opacity:0.4;
+transform:scale(1);
+}
+
+25%{
+opacity:0.8;
+transform:scale(1.05);
+}
+
+50%{
+opacity:0.3;
+transform:scale(1);
+}
+
+75%{
+opacity:0.9;
+transform:scale(1.03);
+}
+
+100%{
+opacity:0.4;
+transform:scale(1);
+}
+
+}
+/* DESTELLOS DORADOS SOLO PARA PANTALLA 3 */
+
+#screen3 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* contenedor de destellos */
+.sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* cada destello */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffd700 0%, rgba(255,215,0,0) 70%);
+  border-radius: 50%;
+  animation: sparkle 4s linear infinite;
+  opacity: 0;
+}
+
+/* animación */
+@keyframes sparkle {
+  0% {
+    transform: translateY(20px) scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+/* CONTENEDOR DESTELLOS */
+
+.sparkles{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:0;
+}
+
+/* DESTELLOS */
+
+.sparkle{
+position:absolute;
+width:6px;
+height:6px;
+background:radial-gradient(circle,#d4af37,#c9a227);
+border-radius:50%;
+opacity:0;
+animation:destello 3s linear infinite;
+}
+
+@keyframes destello{
+
+0%{
+transform:translateY(100px) scale(0.5);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-200px) scale(1);
+opacity:0;
+}
+
+}
+/* QUITAR ESPACIOS DEL TITULO */
+
+.titulo{
+margin-bottom:0;
+padding-bottom:0;
+}
+
+.frase{
+margin-top:0;
+}
+.nombre{
+
+font-family:'Cormorant Garamond', serif;
+
+font-size:42px;
+
+font-style:italic;
+
+letter-spacing:3px;
+
+color:#2e2e2e;
+
+margin-bottom:15px;
+
+}
+/* AJUSTE ESPACIO FECHA Y CONTADOR */
+
+.fecha{
+margin-bottom:0px !important;
+}
+
+.contador{
+margin-top:-30px !important;
+}
+
+.fecha h2{
+margin-bottom:0;
+}
+
+.contador{
+margin-top:0;
+}
+/* SECCION CELEBRACION */
+
+.celebracion img{
+width:40px;
+margin-bottom:20px;
+opacity:0.8;
+}
+
+/* CELEBRACION */
+
+.celebracion h3,
+.celebracion p{
+
+font-family:'Cormorant Garamond', serif;
+font-size:18px;
+letter-spacing:1px;
+line-height:1.6;
+color:#000;
+
+}
+
+.celebracion h3{
+font-family:'Cormorant Garamond', serif;
+font-size:22px;   /* un poco más grande */
+letter-spacing:0px;
+line-height:1.6;
+color:#000;       /* negro */
+font-weight:700;
+margin-bottom:10px;
+}
+
+.celebracion p{
+margin:0 auto 10px auto;
+max-width:420px;
+letter-spacing:1px;
+}
+
+.celebracion button{
+margin-top:20px;
+padding:12px 28px;
+border-radius:30px;
+background:#c6a75e;
+color:white;
+border:none;
+letter-spacing:1px;
+}
+/* ===== GALERIA ===== */
+
+.galeria h3{
+font-family:'Cormorant Garamond', serif;
+font-size:22px;
+letter-spacing:1px;
+color:#000;
+margin-bottom:25px;
+}
+
+/* grid de fotos */
+
+.grid-galeria{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+max-width:500px;
+margin:auto;
+}
+
+/* fotos */
+
+.grid-galeria img{
+width:100%;
+border-radius:12px;
+object-fit:cover;
+aspect-ratio:1/1;
+transition:transform .4s ease, box-shadow .4s ease;
+}
+
+/* efecto elegante */
+
+.grid-galeria img:hover{
+transform:scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+/* BOTON VER FOTOS */
+
+.btn-fotos{
+margin-top:25px;
+padding:12px 28px;
+border-radius:30px;
+background:#c6a75e;
+color:white;
+border:none;
+letter-spacing:1px;
+cursor:pointer;
+}
+
+/* LIGHTBOX */
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+.cerrar{
+position:absolute;
+top:30px;
+right:40px;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+/* LIGHTBOX */
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+}
+
+.cerrar{
+position:absolute;
+top:25px;
+right:35px;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+/* FLECHAS */
+
+.flecha-izq,
+.flecha-der{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:10px;
+user-select:none;
+}
+
+.flecha-izq{
+left:30px;
+}
+
+.flecha-der{
+right:30px;
+}
+.vestimenta p,
+.regalos p{
+
+font-family:'Cormorant Garamond', serif;
+font-size:16px;
+letter-spacing:0.5px;
+line-height:1.6;
+color:#2e2e2e;
+margin:6px 0;
+
+}
+/* ===== TITULOS IGUALES A MOMENTOS ESPECIALES ===== */
+
+.galeria h3,
+.vestimenta h3,
+.regalos h3{
+
+font-family:'Cormorant Garamond', serif;
+font-size:22px;
+letter-spacing:1px;
+color:#000;
+margin-bottom:25px;
+font-weight:700;
+text-align:center;
+
+}
+/* ===== ARREGLAR MARGEN EXACTO COMO CELEBRACION ===== */
+
+.vestimenta,
+.regalos{
+
+width:100%;
+max-width:500px;
+margin:0 auto 80px auto;
+
+}
+/* ============================= */
+/* FIX CONTENEDOR CENTRAL GLOBAL */
+/* ============================= */
+
+.bloque{
+
+width:100%;
+max-width:500px;
+
+margin-left:auto !important;
+margin-right:auto !important;
+
+padding-left:15px;
+padding-right:15px;
+
+}
+
+
+/* asegurar que todas las secciones usen el mismo ancho */
+
+.celebracion,
+.galeria,
+.vestimenta,
+.regalos,
+.fecha,
+.contador{
+
+width:100%;
+max-width:500px;
+
+margin-left:auto !important;
+margin-right:auto !important;
+
+}
+
+
+/* mantener titulo y frase full width */
+
+.titulo,
+.frase{
+max-width:none !important;
+}
+
+
+/* evitar que alguna sección se expanda */
+
+.bloque:not(.titulo):not(.frase){
+
+max-width:500px !important;
+margin-left:auto !important;
+margin-right:auto !important;
+
+}
+/* ===== IGUALAR MARGENES DE TODAS LAS SECCIONES ===== */
+
+.celebracion,
+.vestimenta,
+.regalos,
+.galeria,
+.contador,
+.fecha{
+
+padding-left:25px !important;
+padding-right:25px !important;
+
+}
+.texto-confirmar{
+
+font-family:'Cormorant Garamond', serif;
+
+font-size:18px;
+
+letter-spacing:1px;
+
+line-height:1.6;
+
+color:#2e2e2e;
+
+max-width:420px;
+margin:0 auto 10px auto;
+
+}
+
+.confirmar .titulo-seccion{
+
+font-size:22px;
+color:#1f2a44;
+letter-spacing:1px;
+
+}
+/* ===== SECCION CONFIRMAR IGUAL A CELEBRACION ===== */
+
+.confirmar img{
+width:40px;
+margin-bottom:20px;
+opacity:0.8;
+}
+
+.confirmar h3{
+
+font-family:'Cormorant Garamond', serif;
+font-size:22px;
+letter-spacing:0px;
+line-height:1.6;
+color:#000;
+font-weight:700;
+margin-bottom:10px;
+
+}
+
+.confirmar p{
+
+font-family:'Cormorant Garamond', serif;
+font-size:18px;
+letter-spacing:1px;
+line-height:1.6;
+color:#000;
+
+max-width:420px;
+margin:0 auto 10px auto;
+
+}
+
+.confirmar button{
+
+margin-top:20px;
+padding:12px 28px;
+border-radius:30px;
+background:#c6a75e;
+color:white;
+border:none;
+letter-spacing:1px;
+
+}
+/* titulo confirmar en negrita */
+
+.confirmar h3{
+
+font-weight:700;
+
+}
+/* ================================= */
+/* FIX GLOBAL TEXTOS TODAS SECCIONES */
+/* ================================= */
+
+.bloque p,
+.celebracion p,
+.galeria p,
+.vestimenta p,
+.regalos p,
+.confirmar p,
+.fecha p{
+
+font-family:'Cormorant Garamond', serif !important;
+
+font-size:18px !important;
+
+letter-spacing:1px !important;
+
+line-height:1.6 !important;
+
+color:#2e2e2e !important;
+
+max-width:420px;
+
+margin-left:auto !important;
+margin-right:auto !important;
+
+margin-top:6px !important;
+margin-bottom:6px !important;
+
+}
+/* NO TOCAR ESTOS TEXTOS */
+
+.frase p,
+.contador p,
+.tiempos p,
+.tiempo-item small{
+
+font-size:inherit !important;
+letter-spacing:inherit !important;
+font-family:inherit !important;
+
+}
+/* ===== NO CAMBIAR TEXTO DEL TITULO ===== */
+
+.titulo p{
+
+font-family:'Cormorant Garamond', serif !important;
+
+font-size:34px !important;
+
+letter-spacing:3px !important;
+
+color:#2e2e2e !important;
+
+font-weight:500 !important;
+
+}
+/* mantener blanco en acceso y bienvenida */
+
+#acceso p,
+#bienvenida p{
+
+color:#ffffff !important;
+
+}
+/* ===== RESTAURAR ESTILO FRASE DORADA ===== */
+
+.frase p{
+
+font-family:'Cormorant Garamond', serif !important;
+
+font-size:18px !important;
+
+line-height:1.6 !important;
+
+letter-spacing:1px !important;
+
+font-weight:600 !important;
+
+color:white !important;
+
+max-width:600px !important;
+
+margin:auto !important;
+
+}
+/* ================================= */
+/* ESPACIADO UNIFORME ENTRE SECCIONES */
+/* ================================= */
+
+.bloque{
+margin-top:0 !important;
+margin-bottom:40px !important;
+}
+
+.titulo{
+margin-bottom:0 !important;
+}
+
+.frase{
+margin-top:0 !important;
+margin-bottom:40px !important;
+}
+/* espacio entre titulo y texto */
+
+.bloque h3{
+
+margin-bottom:12px !important;
+
+}
+
+.bloque p{
+
+margin-top:6px !important;
+margin-bottom:6px !important;
+
+}
+/* iconos arriba de titulos */
+
+.bloque img{
+
+margin-bottom:18px !important;
+
+}
+/* botones */
+
+.bloque button{
+
+margin-top:18px !important;
+
+}
+/* no tocar secciones especiales */
+
+.titulo,
+.frase{
+
+margin-bottom:50px !important;
+
+}
+/* ===================== */
+/* FOTO FINAL COMPLETA */
+/* ===================== */
+
+.foto-final{
+
+width:100vw;
+margin-left:calc(-50vw + 50%);
+
+}
+
+.foto-final img{
+
+width:100%;
+height:700px;
+object-fit:cover;
+display:block;
+
+}
+
+
+/* ===================== */
+/* FRANJA DORADA FINAL */
+/* ===================== */
+
+.frase-final{
+
+background:#c6a75e;
+
+width:100vw;
+margin-left:calc(-50vw + 50%);
+
+padding:30px 20px;
+
+text-align:center;
+
+}
+
+.frase-final p{
+
+font-family:'Cormorant Garamond', serif;
+
+font-size:18px;
+
+letter-spacing:1px;
+
+line-height:1.6;
+
+color:white;
+
+max-width:600px;
+
+margin:auto;
+
+font-weight:600;
+
+}
+/* ===================== */
+/* FINAL PEGADO ABAJO */
+/* ===================== */
+
+.foto-final{
+
+width:100vw;
+margin-left:calc(-50vw + 50%);
+
+}
+
+.foto-final img{
+
+width:100%;
+height:420px;
+object-fit:cover;
+display:block;
+
+}
+
+
+/* franja dorada */
+
+.frase-final{
+
+background:#c6a75e;
+
+width:100vw;
+margin-left:calc(-50vw + 50%);
+
+padding:30px 20px;
+
+text-align:center;
+
+margin-bottom:0;
+
+}
+
+
+/* quitar espacio extra del ultimo bloque */
+
+.frase-final:last-child{
+margin-bottom:0 !important;
+}
+.bloque:last-of-type{
+margin-bottom:0 !important;
+}
+#invitacion{
+padding-bottom:0 !important;
+}
+/* FIX espacio entre titulo y frase */
+
+.titulo + .frase{
+margin-top:0 !important;
+}
+.titulo{
+line-height:1;
+margin-bottom:0 !important;
+padding-bottom:0 !important;
+}
+/* juntar fecha y contador */
+
+.fecha{
+margin-bottom:0 !important;
+}
+
+.contador{
+margin-top: 10px !important;
+margin-bottom:40px !important;
+}
+.fecha{
+margin-bottom:0 !important;
+}
+
+.contador{
+margin-top:0 !important;
+}
+.frase{
+margin-bottom:0 !important;
+}
+.fecha{
+margin-top:0 !important;
+}
+.fecha{
+margin-top:0 !important;
+margin-bottom:0 !important;
+padding-top:40px !important;
+padding-bottom:10px !important;
+}
+
+.contador{
+margin-top:0 !important;
+padding-top:10px !important;
+padding-bottom:80px !important;
+}
+.bloque{
+padding-top:50px !important;
+padding-bottom:50px !important;
+}
+.fecha{
+margin-top:0 !important;
+margin-bottom:0 !important;
+padding-top:60px !important;
+padding-bottom:10px !important;
+}
+
+.contador{
+margin-top:0 !important;
+padding-top:10px !important;
+padding-bottom:90px !important;
+}
+/* ============================= */
+/* BLOQUES FULL WIDTH INVITACION */
+/* ============================= */
+
+#invitacion .bloque{
+
+max-width:100% !important;
+width:100% !important;
+
+margin-left:0 !important;
+margin-right:0 !important;
+
+padding-left:0 !important;
+padding-right:0 !important;
+
+}
+#invitacion .bloque > *{
+
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+
+padding-left:15px;
+padding-right:15px;
+
+}
+.bloque:last-of-type{
+margin-bottom:0 !important;
+padding-bottom:40px !important;
+}
+
+.foto-final{
+margin-top:0 !important;
+}
+
+#invitacion{
+padding-bottom:0 !important;
+}
+/* quitar espacio entre confirmar y foto final */
+
+.confirmar{
+margin-bottom:0 !important;
+padding-bottom:0 !important;
+}
+
+.foto-final{
+margin-top:0 !important;
+padding-top:0 !important;
+line-height:0;
+}
+
+.foto-final img{
+display:block;
+margin:0;
+}
+
+#invitacion{
+padding-bottom:0 !important;
+}
+.confirmar{
+padding-bottom:60px !important;
+}
+/* ========================= */
+/* ANIMACION AL HACER SCROLL */
+/* ========================= */
+
+.animar{
+
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+
+}
+
+.animar.visible{
+
+opacity:1;
+transform:translateY(0);
+
+}
+.icono{
+width:90px;
+height:90px;
+object-fit:contain;
+display:block;
+margin:0 auto 15px;
+}
+.celebracion .icono{
+width:120px;
+height:120px;
+}
+
+.confirmar img{
+width:120px;
+height:120px;
+object-fit:contain;
+}
+.contador{
+padding-bottom:20px !important;
+}

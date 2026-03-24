@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60 Años - Gabriela</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+
+  <!-- PANTALLA 2 -->
+<section id="bienvenida" class="screen active show">
+
+  <div class="card">
+
+    <h1>60 Años</h1>
+
+    <p>
+      Te invitamos a celebrar este momento tan especial
+    </p>
+
+    <button id="btnAbrirInvitacion">
+      VER INVITACIÓN
+    </button>
+
+  </div>
+
+</section>
+  <!-- PANTALLA 3 -->
+   <section id="invitacion" class="screen scrollable">
+
+
+
+<!-- TITULO -->
+<div class="bloque titulo animar">
+  <h1>Gabriela</h1>
+  <p>MIS 60 AÑOS</p>
+  <div class="flecha">↓</div>
+</div>
+
+<!-- FRASE -->
+<div class="bloque frase animar" >
+  <p>
+  “Una vida llena de amor merece una celebración especial."
+  </p>
+</div>
+
+<!-- FECHA -->
+<div class="bloque fecha animar" >
+  <p class="texto-arriba">TE ESPERAMOS EL DÍA</p>
+  <h2>02 de Mayo</h2>
+</div>
+
+<!-- CONTADOR -->
+<div class="bloque contador animar">
+
+  <div class="tiempos ">
+
+    <div>
+      <span id="dias">00</span>
+      <p>Días</p>
+    </div>
+
+    <div class="separador">:</div>
+
+    <div>
+      <span id="horas">00</span>
+      <p>Hs</p>
+    </div>
+
+    <div class="separador">:</div>
+
+    <div>
+      <span id="minutos">00</span>
+      <p>Min</p>
+    </div>
+
+    <div class="separador">:</div>
+
+    <div>
+      <span id="segundos">00</span>
+      <p>Seg</p>
+    </div>
+
+  </div>
+
+</div>
+<!-- CELEBRACION -->
+
+<div class="bloque celebracion animar" style="background:#f9f7f3;">
+
+  <img src="assets/copas.png" class="icono">
+
+  <h3>CELEBRACIÓN</h3>
+
+  <p>
+  Después de la ceremonia, celebremos juntos en Serata Jardin de Eventos.
+  </p>
+
+  <p>
+  Bajo luces suaves, risas compartidas y mucho amor.
+  </p>
+
+  <button onclick="window.open('https://share.google/ZO9GkmTwKT5CwkjR3','_blank')">
+  LLEGAR A LA CELEBRACIÓN
+  </button>
+
+</div>
+
+<!-- MOMENTOS ESPECIALES -->
+
+<div class="bloque galeria animar">
+
+  <img src="assets/icono-recuerdos.png" class="icono">
+
+  <h3>MOMENTOS ESPECIALES</h3>
+
+  <div class="grid-galeria">
+
+    <img src="assets/foto1.jpg">
+    <img src="assets/foto2.jpg"> 
+    <img src="assets/foto3.jpg"> 
+    <img src="assets/foto4.jpg"> 
+    <img src="assets/foto5.jpg"> 
+    <img src="assets/foto6.jpg"> 
+
+  </div>
+
+<button class="btn-fotos" onclick="abrirGaleria()">
+VER FOTOS
+</button>
+
+</div>
+
+<!-- VESTIMENTA -->
+
+<div class="bloque vestimenta animar" style="background:#f9f7f3;">
+
+  <img src="assets/icono-vestimenta.png" class="icono">
+
+  <h3>CÓDIGO DE VESTIMENTA</h3>
+
+  <p>
+  Celebremos juntos esta noche tan especial con un toque elegante.
+  </p>
+
+  <p>
+  Vestimenta formal para todos los invitados.
+  </p>
+
+  <p>
+  Tonos dorados, negros y elegantes son bienvenidos
+  para acompañar esta celebración de 60 años.
+  </p>
+
+</div>
+<!-- REGALOS -->
+
+<div class="bloque regalos animar" >
+
+  <img src="assets/icono-regalo.png" class="icono">
+
+  <h3>REGALOS</h3>
+
+  <p>
+  Tu presencia es el mejor regalo que podemos recibir,
+  pero si deseas tener un detalle en esta ocasión especial,
+  será recibido con mucho cariño.
+  </p>
+
+  <p>
+  Podrás encontrar una mesa de regalos el día del evento.
+  </p>
+
+</div>
+
+<div class="bloque confirmar animar" style="background:#f9f7f3;">
+
+  <img src="assets/accept.png">
+
+  <h3>
+    ¡Ahora te toca decir "SÍ ACEPTO" a nuestra invitación!
+  </h3>
+
+  <p>
+    Tu presencia es muy importante para nosotros.
+    Confirma tu asistencia para preparar esta celebración
+    como se merece.
+  </p>
+
+  <button id="btnConfirmar">
+    CONFIRMAR ASISTENCIA
+  </button>
+
+</div>
+<!-- FOTO FINAL -->
+
+<div class="foto-final animar">
+  <img src="assets/final.jpg">
+</div>
+
+
+<!-- FRASE FINAL -->
+
+<div class="frase-final animar">
+
+  <p>
+    Gracias por ser parte de este momento tan especial.
+    Tu compañía hace que la celebración sea inolvidable.
+  </p>
+
+</div>
+
+</section>
+<div id="lightbox">
+
+<span class="cerrar" onclick="cerrarGaleria()">✕</span>
+
+<span class="flecha-izq" onclick="fotoAnterior()">❮</span>
+
+<img id="fotoGrande">
+
+<span class="flecha-der" onclick="fotoSiguiente()">❯</span>
+
+</div>
+  <script src="script.js"></script>
+
+</body>
+</html>
