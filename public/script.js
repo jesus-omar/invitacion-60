@@ -32,6 +32,10 @@ btnAbrirInvitacion.addEventListener("click", () => {
 
   setTimeout(mostrarEnScroll, 300);
 
+  if(musica){
+    musica.play().catch(()=>{});
+  }
+
 });
 
 
