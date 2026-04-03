@@ -110,12 +110,12 @@ actualizarContador();
 /* ===== GALERIA ===== */
 
 const fotos = [
-"assets/foto1.jpg",
-"assets/foto2.jpg",
-"assets/foto3.jpg",
-"assets/foto4.jpg",
-"assets/foto5.jpg",
-"assets/foto6.jpg"
+"assets/foto1.webp",
+"assets/foto2.webp",
+"assets/foto3.webp",
+"assets/foto4.webp",
+"assets/foto5.webp",
+"assets/foto6.webp"
 ];
 
 let indiceFoto = 0;

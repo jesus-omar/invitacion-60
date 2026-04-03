@@ -1,0 +1,23 @@
+{
+  "name": "invitacion-60-gabriela",
+  "version": "1.0.0",
+  "main": "convertir-webp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesus-omar/invitacion-60.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesus-omar/invitacion-60/issues"
+  },
+  "homepage": "https://github.com/jesus-omar/invitacion-60#readme",
+  "description": "",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
