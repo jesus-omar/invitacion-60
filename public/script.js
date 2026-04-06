@@ -46,7 +46,7 @@ btnConfirmar.addEventListener("click", () => {
   const mensaje = `Hola, confirmo mi asistencia a la celebración de 60 años. Nos vemos el 2 de mayo.`;
 
   const url =
-    `https://wa.me/5215520494809?text=${encodeURIComponent(mensaje)}`;
+    `https://wa.me/5215562327538?text=${encodeURIComponent(mensaje)}`;
 
   window.open(url, "_blank");
 
