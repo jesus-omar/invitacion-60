@@ -185,7 +185,7 @@ button:hover {
 
 #acceso .card,
 #bienvenida .card {
-  background: rgba(243, 198, 155, 0.45); /* negro transparente */
+  background: rgba(252, 164, 1, 0.45); /* negro transparente */
   backdrop-filter: blur(6px);
   color: white;
 }
