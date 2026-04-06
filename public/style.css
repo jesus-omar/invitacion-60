@@ -1515,3 +1515,24 @@ object-fit:contain;
 .contador{
 padding-bottom:20px !important;
 }
+
+@media (max-width: 600px) {
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  #bienvenida p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  #bienvenida button {
+    width: 100%;
+    padding: 12px;
+  }
+
+}
